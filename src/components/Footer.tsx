@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">WebCraft Pro</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">TDesigns</h3>
             <p className="text-slate-300 mb-6 leading-relaxed">
               We specialize in creating beautiful, high-performing websites that help businesses 
               succeed online. From concept to launch, we're your trusted web development partner.
@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center text-slate-300">
                 <Mail className="h-4 w-4 mr-3 text-violet-400" />
-                <span>hello@webcraftpro.com</span>
+                <span>hello@tdesigns.com</span>
               </div>
               <div className="flex items-center text-slate-300">
                 <Phone className="h-4 w-4 mr-3 text-violet-400" />
@@ -35,7 +35,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'Services', 'About', 'Testimonials', 'Contact'].map((link) => (
+              {['Home', 'Services', 'Pricing', 'About', 'Testimonials', 'Contact'].map((link) => (
                 <li key={link}>
                   <a 
                     href={`#${link.toLowerCase()}`}
@@ -74,10 +74,10 @@ const Footer = () => {
               <Heart className="h-4 w-4 mx-2 text-red-400 fill-current" />
               <span>and</span>
               <Code className="h-4 w-4 mx-2 text-violet-400" />
-              <span>by WebCraft Pro</span>
+              <span>by TDesigns</span>
             </div>
             <p className="text-slate-400 text-sm">
-              © {currentYear} WebCraft Pro. All rights reserved.
+              © {currentYear} TDesigns. All rights reserved.
             </p>
           </div>
         </div>
