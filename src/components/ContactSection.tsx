@@ -175,7 +175,7 @@ const ContactSection = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     className="bg-slate-800 border-slate-600 text-white placeholder-slate-400"
-                    placeholder="Your company name"
+                    placeholder="Your phone number"
                   />
                 </div>
 
