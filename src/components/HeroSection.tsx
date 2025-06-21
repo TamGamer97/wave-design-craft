@@ -26,7 +26,7 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <h1  style={{marginTop: 120}} className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             <span className="block text-white mb-4">Transform Your</span>
             <span className="gradient-text">Digital Presence</span>
           </h1>
