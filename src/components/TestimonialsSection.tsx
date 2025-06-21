@@ -9,52 +9,52 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      company: 'TechStart Inc.',
-      role: 'CEO',
-      content: 'WebCraft Pro transformed our online presence completely. The website they built for us increased our conversion rate by 150% in just 3 months.',
-      rating: 5,
-      avatar: '👩‍💼'
-    },
-    {
-      name: 'Michael Chen',
-      company: 'GreenLeaf Restaurant',
-      role: 'Owner',
-      content: 'The team delivered exactly what we needed - a beautiful, fast website that showcases our restaurant perfectly. Orders through the site have tripled!',
-      rating: 5,
-      avatar: '👨‍🍳'
-    },
-    {
-      name: 'Emma Rodriguez',
-      company: 'FitLife Gym',
-      role: 'Marketing Director',
-      content: 'Professional, responsive, and incredibly talented. They understood our vision and brought it to life better than we ever imagined.',
-      rating: 5,
-      avatar: '👩‍💪'
-    },
-    {
-      name: 'David Thompson',
-      company: 'EcoSolutions',
-      role: 'Founder',
-      content: 'Outstanding work! The e-commerce platform they built handles our complex inventory perfectly. Sales have increased by 200% since launch.',
-      rating: 5,
-      avatar: '👨‍💻'
-    },
-    {
-      name: 'Lisa Park',
-      company: 'Creative Agency',
+      name: 'Irfan U',
+      company: 'SWT',
       role: 'Creative Director',
-      content: 'The attention to detail and design quality exceeded our expectations. Our clients love the new portfolio site - it truly represents our brand.',
+      content: 'This guy has met all that i wanted, with day/night support throughout the project. Very efficient and pleasant to work with,,with alot of patience he continued to work on my project until completion. Buy his package without any hesitations. Highly recommended, will defiantly use his services again. Many thanks Tamim stay blessed!!!!!',
       rating: 5,
       avatar: '👩‍🎨'
     },
     {
-      name: 'James Wilson',
-      company: 'Local Law Firm',
-      role: 'Partner',
-      content: 'They made the entire process seamless. The website is professional, fast, and has helped us attract higher-quality clients consistently.',
+      name: 'Daniel C',
+      company: 'Firelaps',
+      role: 'Analyst',
+      content: "Tamim did great work for us in laying the groundwork for our app as we requested. His communication was proactive and clear, and his work was quick and complete. The end result was something that accomplished our objectives and we can use to move forward in our project. We'll reach out to Tamim again if we need any additional mobile app development.",
+      rating: 5,
+      avatar: '👨‍🍳'
+    },
+    {
+      name: 'Clark A',
+      company: 'Sandwich Builder Club',
+      role: 'Marketing Director',
+      content: 'Excellent game designer! Responsive, helpful, went above and beyond in developing assets, fulfilled all of my details and requests, and added lots of insight and helpful tools. Helped me with my revisions with no issues, and delivered in a timely manner. I highly recommend working with Tamim!',
+      rating: 5,
+      avatar: '👩‍💪'
+    },
+    {
+      name: 'Tanvir R',
+      company: '',
+      role: '',
+      content: 'Got exactly what I needed. He is an expert on his work. Will recommend to others.',
+      rating: 5,
+      avatar: '👨‍💻'
+    },
+    {
+      name: 'James E',
+      company: 'EcoPanda',
+      role: 'CEO',
+      content: 'Very prompt and accommodating. Will definitely love to work again.',
       rating: 5,
       avatar: '👨‍⚖️'
+    },
+    {
+      name: 'Cherelle E',
+      company: '',
+      role: '',
+      content: 'This seller worked quickly on the order and really paid attention to detail. Was always available for questions and gave me a great end product.',
+      rating: 5,
+      avatar: '👩‍💼'
     }
   ];
 

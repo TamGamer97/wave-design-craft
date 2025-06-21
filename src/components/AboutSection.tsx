@@ -7,10 +7,10 @@ const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   const stats = [
-    { icon: Users, number: '200+', label: 'Happy Clients' },
-    { icon: Award, number: '95%', label: 'Success Rate' },
+    { icon: Users, number: '4.9', label: 'Raiting' },
+    { icon: Award, number: '100%', label: 'Response Rate' },
     { icon: Clock, number: '5+', label: 'Years Experience' },
-    { icon: TrendingUp, number: '150%', label: 'Average ROI Increase' }
+    { icon: TrendingUp, number: '50+', label: 'Projects' }
   ];
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              About <span className="gradient-text">WebCraft Pro</span>
+              About <span className="gradient-text">TDesigns</span>
             </h2>
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
               We are a passionate team of web developers and designers dedicated to creating exceptional 

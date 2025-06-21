@@ -18,15 +18,15 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center text-slate-300">
                 <Mail className="h-4 w-4 mr-3 text-violet-400" />
-                <span>hello@tdesigns.com</span>
+                <span>contact.tamdev@gmail.com</span>
               </div>
               <div className="flex items-center text-slate-300">
                 <Phone className="h-4 w-4 mr-3 text-violet-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>Temporarily unavailable</span>
               </div>
               <div className="flex items-center text-slate-300">
                 <MapPin className="h-4 w-4 mr-3 text-violet-400" />
-                <span>San Francisco, CA</span>
+                <span>Hertfordshire, England</span>
               </div>
             </div>
           </div>
@@ -70,9 +70,9 @@ const Footer = () => {
         <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center text-slate-300 mb-4 md:mb-0">
-              <span>Made with</span>
-              <Heart className="h-4 w-4 mx-2 text-red-400 fill-current" />
-              <span>and</span>
+              {/* <span>Made with</span> */}
+              {/* <Heart className="h-4 w-4 mx-2 text-red-400 fill-current" /> */}
+              {/* <span>and</span> */}
               <Code className="h-4 w-4 mx-2 text-violet-400" />
               <span>by TDesigns</span>
             </div>

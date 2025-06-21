@@ -1,130 +1,92 @@
 
-import { Check } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useEffect, useRef, useState } from 'react';
+import { Monitor, Smartphone, ShoppingCart, Search, Palette, Settings } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const PricingSection = () => {
-  const packages = [
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const services = [
     {
-      name: "Starter",
-      price: "$1,299",
-      description: "Perfect for small businesses and startups",
-      features: [
-        "Responsive Design",
-        "Up to 5 Pages",
-        "Contact Form",
-        "Basic SEO Setup",
-        "Mobile Optimization",
-        "1 Month Support"
-      ],
-      popular: false
+      icon: Monitor,
+      title: 'Web Development',
+      description: 'Custom websites built with modern technologies for optimal performance and user experience.',
+      features: ['React/Next.js', 'Custom CMS', 'API Integration', 'Performance Optimization']
     },
     {
-      name: "Professional",
-      price: "$2,499",
-      description: "Ideal for growing businesses",
-      features: [
-        "Everything in Starter",
-        "Up to 15 Pages",
-        "E-commerce Integration",
-        "Advanced SEO",
-        "Analytics Setup",
-        "3 Months Support",
-        "Content Management System"
-      ],
-      popular: true
+      icon: Smartphone,
+      title: 'Mobile-First Design',
+      description: 'Responsive designs that look perfect on all devices, from mobile phones to desktop screens.',
+      features: ['Mobile Optimization', 'Touch Interactions', 'Progressive Web Apps', 'Cross-Platform']
     },
     {
-      name: "Enterprise",
-      price: "$4,999",
-      description: "For large businesses with custom needs",
-      features: [
-        "Everything in Professional",
-        "Unlimited Pages",
-        "Custom Development",
-        "Advanced Integrations",
-        "Performance Optimization",
-        "6 Months Support",
-        "Priority Development"
-      ],
-      popular: false
-    }
+      icon: ShoppingCart,
+      title: 'E-Commerce Solutions',
+      description: 'Complete online stores with secure payment processing and inventory management.',
+      features: ['Payment Integration', 'Inventory Management', 'Order Tracking', 'Multi-Currency']
+    },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleCards(prev => [...prev, index]);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const cards = sectionRef.current?.querySelectorAll('.service-card');
+    cards?.forEach(card => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="pricing" className="py-20 bg-slate-800/50">
+    <section id="services" ref={sectionRef} className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-4xl font-bold gradient-text mb-4">
-            Simple, Transparent Pricing
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Our <span className="gradient-text">Prices</span>
           </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Choose the perfect package for your business needs. All packages include hosting setup and domain configuration.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            We offer comprehensive web development services to help your business succeed online. 
+            From design to deployment, we've got you covered.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {packages.map((pkg, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
             <Card 
-              key={pkg.name} 
-              className={`glass-card hover-glow relative animate-on-scroll ${
-                pkg.popular ? 'border-violet-500 border-2' : 'border-slate-700'
+              key={service.title}
+              data-index={index}
+              className={`service-card glass-card border-slate-700 hover-glow transition-all duration-700 transform ${
+                visibleCards.includes(index) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
               }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-              
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl font-bold text-white mb-2">
-                  {pkg.name}
-                </CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold gradient-text">{pkg.price}</span>
-                  <span className="text-slate-400 ml-2">one-time</span>
-                </div>
-                <p className="text-slate-300">{pkg.description}</p>
-              </CardHeader>
-
-              <CardContent>
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-slate-300">
-                      <Check className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />
-                      <span>{feature}</span>
+              <CardContent className="p-8">
+                <service.icon className="h-12 w-12 text-violet-400 mb-6" />
+                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="text-sm text-slate-400 flex items-center">
+                      <div className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-3"></div>
+                      {feature}
                     </li>
                   ))}
                 </ul>
-
-                <Button 
-                  className={`w-full py-3 ${
-                    pkg.popular 
-                      ? 'bg-gradient-to-r from-violet-500 to-cyan-500 hover:from-violet-600 hover:to-cyan-600' 
-                      : 'bg-slate-700 hover:bg-slate-600 text-white'
-                  } transition-all duration-300 hover:scale-105`}
-                >
-                  Get Started
-                </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12 animate-on-scroll">
-          <p className="text-slate-400 mb-4">
-            Need something custom? We'd love to discuss your project.
-          </p>
-          <Button 
-            variant="outline" 
-            className="border-violet-500 text-violet-400 hover:bg-violet-500 hover:text-white"
-          >
-            Contact for Custom Quote
-          </Button>
         </div>
       </div>
     </section>

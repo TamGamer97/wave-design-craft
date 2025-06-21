@@ -1,11 +1,12 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser'
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -28,34 +29,58 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for your interest. We\'ll get back to you within 24 hours.',
-      });
-      setFormData({ name: '', email: '', company: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    
+    const serviceId = "service_qm9re99"
+    const templateId = "template_4n91qir"
+    const publicKey = "qj-kpn96myFWtF034"
+
+    if(formData.message == '')
+    {
+        return
+    }
+
+
+    emailjs.send(serviceId, templateId, formData, publicKey)
+      .then((response) => {
+        console.log('Email Sent Successfuly', response)
+        // Simulate form submission
+        setTimeout(() => {
+          toast({
+            title: 'Message Sent!',
+            description: 'Thank you for your interest. We\'ll get back to you within 24 hours.',
+          });
+          setFormData({ name: '', email: '', company: '', message: '' });
+          setIsSubmitting(false);
+        }, 1000);
+      })
+      .catch((error) => {
+        console.log('Error')
+        setTimeout(() => {
+          toast({
+            title: 'Failed',
+            description: 'Your messsage has failed to be sent.',
+          });
+        }, 1000);
+      })
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'hello@webcraftpro.com',
+      content: 'contact.tamdev@gmail.com',
       description: 'Send us an email anytime'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      content: '+1 (555) 123-4567',
+      content: 'Temporarily unavailable',
       description: 'Mon-Fri from 9am to 6pm'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: 'San Francisco, CA',
+      content: 'Hertfordshire, England',
       description: 'Schedule a meeting'
     }
   ];
@@ -141,7 +166,7 @@ const ContactSection = () => {
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
-                    Company Name
+                    Phone Number
                   </label>
                   <Input
                     id="company"

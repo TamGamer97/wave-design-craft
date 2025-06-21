@@ -10,6 +10,11 @@ const HeroSection = () => {
     setIsVisible(true);
   }, []);
 
+  const openInNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if (newWindow) newWindow.opener = null
+}
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Animated background elements */}
@@ -32,21 +37,28 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-violet-500 to-cyan-500 hover:from-violet-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover-glow group"
-            >
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <a
+                  href={'#contact'}
+                  className="text-slate-300 hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+                >
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-violet-500 to-cyan-500 hover:from-violet-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover-glow group"
+              >
+                Start Your Project
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              </a>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105"
-            >
-              View Our Work
-            </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105"
+                onClick={() => openInNewTab('https://fiverr.com/tamgamer97')}
+              >
+                View Our Work
+              </Button>
+
           </div>
 
           {/* Feature icons */}
