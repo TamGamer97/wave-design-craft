@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ExternalLink, Globe, Users, Code, Zap, ArrowRight, Plus } from 'lucide-react';
+import { ExternalLink, Globe, Users, Code, Zap, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -206,52 +206,16 @@ const PortfolioSection = () => {
               </Card>
             );
           })}
-
-          {/* Custom Website Option */}
-          <Card className="glass-card border-slate-700 overflow-hidden cursor-pointer transition-all duration-500 hover-glow group border-dashed border-2 border-violet-500/50 hover:border-violet-400">
-            <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center min-h-[400px]">
-              <div className="w-20 h-20 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Plus className="h-10 w-10 text-white" />
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-violet-400 transition-colors">
-                Custom Website
-              </h3>
-              
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                Don't see what you need? Let's create something unique for your business. 
-                I'll build a completely custom website tailored to your specific requirements.
-              </p>
-
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center text-slate-300 text-sm">
-                  <span className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-2"></span>
-                  Completely custom design
-                </div>
-                <div className="flex items-center text-slate-300 text-sm">
-                  <span className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-2"></span>
-                  Built from scratch
-                </div>
-                <div className="flex items-center text-slate-300 text-sm">
-                  <span className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-2"></span>
-                  Your vision, our expertise
-                </div>
-              </div>
-
-              <Button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-violet-500 to-cyan-500 hover:from-violet-600 hover:to-cyan-600 text-white rounded-full transition-all duration-300 group/btn"
-              >
-                Start Custom Project
-                <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Button>
-            </CardContent>
-          </Card>
         </div>
 
         {/* How It Works Section */}
-        <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 mb-16 border border-slate-700">
-          <h3 className="text-2xl font-semibold text-white mb-8 text-center">How It Works</h3>
+        <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-slate-700">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold text-white mb-2">How It Works</h3>
+            <p className="text-slate-400 text-sm">
+              (in under 24hrs)
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center group">
               <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -278,6 +242,22 @@ const PortfolioSection = () => {
               <h4 className="text-lg font-semibold text-white mb-2">I Deliver It</h4>
               <p className="text-slate-300">Receive your custom website, fully optimized and ready to launch</p>
             </div>
+          </div>
+        </div>
+
+        {/* Custom Website Option */}
+        <div className="text-center mb-8">
+          <div className="bg-slate-800/20 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 max-w-2xl mx-auto">
+            <p className="text-slate-300 mb-4">
+              Don't see what you need? I can create a completely custom website built from scratch, tailored specifically to your business requirements.
+            </p>
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-violet-500 to-cyan-500 hover:from-violet-600 hover:to-cyan-600 text-white px-6 py-2 rounded-full transition-all duration-300 group"
+            >
+              Request Custom Website
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
 
