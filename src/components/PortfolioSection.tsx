@@ -1,5 +1,6 @@
+
 import { useState } from 'react';
-import { ExternalLink, Globe, Users, Code, Zap, ArrowRight } from 'lucide-react';
+import { ExternalLink, Globe, Users, Code, Zap, ArrowRight, Plus } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -97,41 +98,9 @@ const PortfolioSection = () => {
             Discover the innovative websites we've crafted for businesses across various industries. 
             Each project showcases our commitment to excellence and modern design.
           </p>
-
-          {/* Simple Process Section */}
-          <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 mb-16 border border-slate-700">
-            <h3 className="text-2xl font-semibold text-white mb-8">How It Works</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center text-center group">
-                <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-xl">1</span>
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Choose a Site</h4>
-                <p className="text-slate-300">Browse our portfolio and select a design that fits your vision</p>
-              </div>
-
-              <div className="flex flex-col items-center text-center group relative">
-                <ArrowRight className="hidden md:block absolute -left-8 top-8 text-violet-400 opacity-50" size={24} />
-                <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-xl">2</span>
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Tell Me What to Change</h4>
-                <p className="text-slate-300">Share your requirements, branding, and any customizations needed</p>
-                <ArrowRight className="hidden md:block absolute -right-8 top-8 text-violet-400 opacity-50" size={24} />
-              </div>
-
-              <div className="flex flex-col items-center text-center group">
-                <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-xl">3</span>
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-2">I Deliver It</h4>
-                <p className="text-slate-300">Receive your custom website, fully optimized and ready to launch</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => {
             const SectorIcon = getSectorIcon(project.sector);
             const isHovered = hoveredProject === project.id;
@@ -237,10 +206,83 @@ const PortfolioSection = () => {
               </Card>
             );
           })}
+
+          {/* Custom Website Option */}
+          <Card className="glass-card border-slate-700 overflow-hidden cursor-pointer transition-all duration-500 hover-glow group border-dashed border-2 border-violet-500/50 hover:border-violet-400">
+            <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center min-h-[400px]">
+              <div className="w-20 h-20 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Plus className="h-10 w-10 text-white" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-violet-400 transition-colors">
+                Custom Website
+              </h3>
+              
+              <p className="text-slate-300 mb-6 leading-relaxed">
+                Don't see what you need? Let's create something unique for your business. 
+                I'll build a completely custom website tailored to your specific requirements.
+              </p>
+
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-slate-300 text-sm">
+                  <span className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-2"></span>
+                  Completely custom design
+                </div>
+                <div className="flex items-center text-slate-300 text-sm">
+                  <span className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-2"></span>
+                  Built from scratch
+                </div>
+                <div className="flex items-center text-slate-300 text-sm">
+                  <span className="w-1.5 h-1.5 bg-violet-400 rounded-full mr-2"></span>
+                  Your vision, our expertise
+                </div>
+              </div>
+
+              <Button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-violet-500 to-cyan-500 hover:from-violet-600 hover:to-cyan-600 text-white rounded-full transition-all duration-300 group/btn"
+              >
+                Start Custom Project
+                <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 mb-16 border border-slate-700">
+          <h3 className="text-2xl font-semibold text-white mb-8 text-center">How It Works</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-xl">1</span>
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">Choose a Site</h4>
+              <p className="text-slate-300">Browse our portfolio and select a design that fits your vision</p>
+            </div>
+
+            <div className="flex flex-col items-center text-center group relative">
+              <ArrowRight className="hidden md:block absolute -left-8 top-8 text-violet-400 opacity-50" size={24} />
+              <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-xl">2</span>
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">Tell Me What to Change</h4>
+              <p className="text-slate-300">Share your requirements, branding, and any customizations needed</p>
+              <ArrowRight className="hidden md:block absolute -right-8 top-8 text-violet-400 opacity-50" size={24} />
+            </div>
+
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-xl">3</span>
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">I Deliver It</h4>
+              <p className="text-slate-300">Receive your custom website, fully optimized and ready to launch</p>
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center">
           <p className="text-slate-300 mb-6">
             Ready to see your business featured in our next showcase?
           </p>
