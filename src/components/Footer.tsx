@@ -1,4 +1,3 @@
-
 import { Heart, Code, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -35,13 +34,19 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'Services', 'Pricing', 'About', 'Testimonials', 'Contact'].map((link) => (
-                <li key={link}>
+              {[
+                { label: 'Services', href: '#services' },
+                { label: 'Pricing', href: '#pricing' },
+                { label: 'Portfolio', href: '#portfolio' },
+                { label: 'About', href: '#about' },
+                { label: 'Contact', href: '#contact' }
+              ].map((link) => (
+                <li key={link.label}>
                   <a 
-                    href={`#${link.toLowerCase()}`}
-                    className="text-slate-300 hover:text-violet-400 transition-colors duration-200"
+                    href={link.href} 
+                    className="text-slate-300 hover:text-violet-400 transition-colors"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
