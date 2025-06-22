@@ -1,3 +1,4 @@
+
 import { Heart, Code, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -36,7 +37,6 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 { label: 'Services', href: '#services' },
-                { label: 'Pricing', href: '#pricing' },
                 { label: 'Portfolio', href: '#portfolio' },
                 { label: 'About', href: '#about' },
                 { label: 'Contact', href: '#contact' }
