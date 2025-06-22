@@ -14,59 +14,29 @@ const PortfolioSection = () => {
       sector: "Education",
       description: "Modern learning management system for universities and colleges",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
-      url: "https://example-edu.com",
+      url: "https://education-template-site.vercel.app",
       features: ["Student Portal", "Course Management", "Online Testing"],
-      tech: ["React", "Node.js", "MongoDB"]
+      tech: ["React", "Node.js", "TypeScript"]
     },
     {
       id: 2,
+      title: "Driving Schools",
+      sector: "Education",
+      description: "Appointment booking systems and modern layouts to attract the new drivers",
+      image: "https://images.unsplash.com/photo-1630406144797-821be1f35d75?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://driving-school-template.netlify.app",
+      features: ["Appointment Booking", "Testimonials", "Course listings"],
+      tech: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      id: 3,
       title: "HealthCare Plus",
       sector: "Healthcare",
       description: "Patient management and appointment booking system",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
-      url: "https://example-health.com",
+      url: "",
       features: ["Appointment Booking", "Patient Records", "Telemedicine"],
       tech: ["React", "TypeScript", "PostgreSQL"]
-    },
-    {
-      id: 3,
-      title: "RetailMax",
-      sector: "E-commerce",
-      description: "Complete e-commerce solution with inventory management",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      url: "https://example-retail.com",
-      features: ["Online Store", "Payment Gateway", "Inventory Tracking"],
-      tech: ["Next.js", "Stripe", "Firebase"]
-    },
-    {
-      id: 4,
-      title: "FinanceHub",
-      sector: "Finance",
-      description: "Banking and financial services platform",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      url: "https://example-finance.com",
-      features: ["Account Management", "Transaction History", "Investment Tools"],
-      tech: ["React", "Express", "MySQL"]
-    },
-    {
-      id: 5,
-      title: "FoodieDelights",
-      sector: "Restaurant",
-      description: "Restaurant management and online ordering system",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-      url: "https://example-restaurant.com",
-      features: ["Online Ordering", "Table Booking", "Menu Management"],
-      tech: ["Vue.js", "Node.js", "SQLite"]
-    },
-    {
-      id: 6,
-      title: "TechStartup",
-      sector: "Technology",
-      description: "SaaS platform for business automation",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
-      url: "https://example-tech.com",
-      features: ["Workflow Automation", "Analytics Dashboard", "API Integration"],
-      tech: ["React", "Python", "Docker"]
     }
   ];
 
@@ -222,7 +192,7 @@ const PortfolioSection = () => {
                 <span className="text-white font-bold text-xl">1</span>
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Choose a Site</h4>
-              <p className="text-slate-300">Browse our portfolio and select a design that fits your vision</p>
+              <p className="text-slate-300">Browse our portfolio and select a website that fits your vision</p>
             </div>
 
             <div className="flex flex-col items-center text-center group relative">
@@ -230,7 +200,7 @@ const PortfolioSection = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Tell Me What to Change</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">Tell Us What to Change</h4>
               <p className="text-slate-300">Share your requirements, branding, and any customizations needed</p>
               <ArrowRight className="hidden md:block absolute -right-8 top-8 text-violet-400 opacity-50" size={24} />
             </div>
@@ -239,8 +209,8 @@ const PortfolioSection = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">I Deliver It</h4>
-              <p className="text-slate-300">Receive your custom website, fully optimized and ready to launch</p>
+              <h4 className="text-lg font-semibold text-white mb-2">We Deliver It</h4>
+              <p className="text-slate-300">Receive your custom website, fully optimized and hosted for free</p>
             </div>
           </div>
         </div>
@@ -249,7 +219,7 @@ const PortfolioSection = () => {
         <div className="text-center mb-8">
           <div className="bg-slate-800/20 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 max-w-2xl mx-auto">
             <p className="text-slate-300 mb-4">
-              Don't see what you need? I can create a completely custom website built from scratch, tailored specifically to your business requirements.
+              Don't see what you need? We can create a completely custom website built from scratch, tailored specifically to your business requirements.
             </p>
             <Button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -262,7 +232,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-slate-300 mb-6">
             Ready to see your business featured in our next showcase?
           </p>
@@ -272,7 +242,7 @@ const PortfolioSection = () => {
           >
             Start Your Project
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

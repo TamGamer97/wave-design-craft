@@ -49,15 +49,16 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               </a>
-            
+            <a href={'#portfolio'}>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105"
-                onClick={() => openInNewTab('https://fiverr.com/tamgamer97')}
               >
                 View Our Work
               </Button>
+            </a>
+            
 
           </div>
 
